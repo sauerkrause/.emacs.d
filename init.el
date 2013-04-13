@@ -49,4 +49,8 @@
 (global-set-key (kbd "M-[ d") 'windmove-left)
 (global-set-key (kbd "M-[ c") 'windmove-right)
 (global-set-key (kbd "M-[ a") 'windmove-up)
+
 (global-set-key (kbd "M-[ b") 'windmove-down)
+
+(require 'rcirc)
+(rcirc-track-minor-mode 1)
