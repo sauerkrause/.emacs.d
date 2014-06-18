@@ -1,5 +1,13 @@
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/"))
 (add-to-list 'load-path "~/.emacs.d/load-path/")
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives 
+    '("marmalade" .
+      "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
 (require 'android-common)
 (require 'android-compile)
 (require 'android-host)
@@ -34,6 +42,10 @@
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+(require 'paredit)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'lisp-mode-hook 'paredit-mode)
+
 ;; Highlight matching parentheses
 (require 'paren)
 (setq show-paren-style 'parenthesis)
@@ -59,14 +71,16 @@
 (require 'rcirc)
 (rcirc-track-minor-mode 1)
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(rcirc-server-alist (quote (("vps.sauerkrause.us" :channels ("")))))
+ '(rcirc-track-minor-mode t)
  '(safe-local-variable-values (quote ((Base . 10) (Syntax . ANSI-Common-Lisp)))))
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(rainbow-delimiters-depth-4-face ((t (:foreground "#970098")))))
