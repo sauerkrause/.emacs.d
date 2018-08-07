@@ -4,6 +4,8 @@
 (when (>= emacs-major-version 24)
   (require 'package)
   (package-initialize)
+  ;; add melpa stable
+  (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
   (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
   (package-initialize))
