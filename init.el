@@ -20,6 +20,10 @@
 	    (setq c-basic-offset 8)))
 
 (add-hook 'c++-mode-hook 'android-compile)
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (setq-default indent-tabs-mode nil)
+            (setq c-basic-offset 4)))
 (add-hook 'java-mode-hook 'android-compile)
 (add-hook 'java-mode-hook
 	  (lambda ()
@@ -77,6 +81,8 @@
  ;; If there is more than one, they won't work right.
  '(rcirc-server-alist (quote (("vps.sauerkrause.us" :channels ("")))))
  '(rcirc-track-minor-mode t)
+ '(custom-enabled-themes (quote (misterioso)))
+ '(inhibit-startup-screen t)
  '(safe-local-variable-values (quote ((Base . 10) (Syntax . ANSI-Common-Lisp)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -84,3 +90,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(rainbow-delimiters-depth-4-face ((t (:foreground "#970098")))))
+
