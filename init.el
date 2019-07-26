@@ -1,4 +1,3 @@
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/"))
 (add-to-list 'load-path "~/.emacs.d/load-path/")
 
 (when (>= emacs-major-version 24)
