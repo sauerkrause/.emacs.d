@@ -14,6 +14,12 @@
 (require 'android-host)
 (require 'google-c-style)
 
+;; could probably clean this up a bit but this will set theme depending on environment
+(require 'gui-config)
+(gui-config-load)
+(require 'cli-config)
+(cli-config-load)
+
 ;; set up the required hooks.
 (add-hook 'c-mode-hook
 	  (lambda ()
@@ -73,17 +79,15 @@
 
 (global-set-key (kbd "M-[ b") 'windmove-down)
 
-(require 'rcirc)
-(rcirc-track-minor-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(rcirc-server-alist (quote (("vps.sauerkrause.us" :channels ("")))))
- '(rcirc-track-minor-mode t)
- '(custom-enabled-themes (quote (misterioso)))
  '(inhibit-startup-screen t)
+ '(package-selected-packages
+   (quote
+    (doom-themes doom-modeline all-the-icons oauth el-get use-package slack helm rainbow-delimiters paredit)))
  '(safe-local-variable-values (quote ((Base . 10) (Syntax . ANSI-Common-Lisp)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
