@@ -6,7 +6,6 @@
   ;; add melpa stable
   (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
   (package-initialize))
 
 (require 'android-common)
@@ -87,7 +86,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (doom-themes doom-modeline all-the-icons oauth el-get use-package slack helm rainbow-delimiters paredit)))
+    (magit doom-themes doom-modeline all-the-icons oauth el-get use-package slack helm rainbow-delimiters paredit)))
  '(safe-local-variable-values (quote ((Base . 10) (Syntax . ANSI-Common-Lisp)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
