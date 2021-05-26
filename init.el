@@ -5,7 +5,7 @@
   (package-initialize)
   ;; add melpa stable
   (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+  (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
   (package-initialize))
 
 (require 'android-common)
@@ -23,13 +23,14 @@
 (add-hook 'c-mode-hook
 	  (lambda ()
 	    "Set 8 space tabs for kernel dev work"
-	    (setq c-basic-offset 8)))
+	    (setq c-basic-offset 2)
+            (setq-default indent-tabs-mode nil)))
 
 (add-hook 'c++-mode-hook 'android-compile)
 (add-hook 'c++-mode-hook
           (lambda ()
             (setq-default indent-tabs-mode nil)
-            (setq c-basic-offset 4)))
+            (setq c-basic-offset 2)))
 (add-hook 'java-mode-hook 'android-compile)
 (add-hook 'java-mode-hook
 	  (lambda ()
@@ -86,7 +87,7 @@
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (magit doom-themes doom-modeline all-the-icons oauth el-get use-package slack helm rainbow-delimiters paredit)))
+    (kotlin-mode magit doom-themes doom-modeline all-the-icons oauth el-get use-package slack helm rainbow-delimiters paredit)))
  '(safe-local-variable-values (quote ((Base . 10) (Syntax . ANSI-Common-Lisp)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
