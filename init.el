@@ -2,7 +2,6 @@
 
 (when (>= emacs-major-version 24)
   (require 'package)
-  (package-initialize)
   ;; add melpa stable
   (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
@@ -86,9 +85,9 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   (quote
-    (kotlin-mode magit doom-themes doom-modeline all-the-icons oauth el-get use-package slack helm rainbow-delimiters paredit)))
- '(safe-local-variable-values (quote ((Base . 10) (Syntax . ANSI-Common-Lisp)))))
+   '(kotlin-mode magit doom-themes doom-modeline all-the-icons oauth el-get use-package slack helm rainbow-delimiters paredit))
+ '(safe-local-variable-values '((Base . 10) (Syntax . ANSI-Common-Lisp)))
+ '(warning-suppress-types '(((package reinitialization)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
